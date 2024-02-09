@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="checkOrthography()">
+  <div>
+    <textarea rows="10" cols="80" id="text" placeholder="Geben Sie den zu korrigierenden Text hier ein ..." formControlName="text"></textarea>
+  </div>
+  <button class="button" type="submit">Prüfen!</button>
+</form>
+<p *ngIf="correction.length > 0">{{ correction }}</p>

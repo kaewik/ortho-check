@@ -1,0 +1,24 @@
+{
+  "name": "orthography-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/diff": "^5.0.9",
+    "@types/jasmine": "^5.1.4",
+    "jasmine": "^5.1.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "diff": "^5.2.0",
+    "openai": "^4.28.0",
+    "rxjs": "^7.8.1"
+  }
+}

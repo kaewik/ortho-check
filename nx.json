@@ -1,0 +1,26 @@
+{
+  "targetDefaults": {
+    "start": {
+      "dependsOn": []
+    },
+    "test": {
+      "cache": true,
+      "dependsOn": []
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "ng": {
+      "dependsOn": []
+    },
+    "watch": {
+      "dependsOn": []
+    }
+  }
+}

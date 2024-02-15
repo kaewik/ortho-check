@@ -27,3 +27,5 @@ pids
 *.njsproj
 *.sln
 *.sw?
+
+.nx/cache

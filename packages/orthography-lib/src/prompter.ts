@@ -1,13 +1,8 @@
+import { PromptResult } from 'orthography-interface';
 import { Observable, from, map } from 'rxjs';
 
 import { AiClient } from './ai-client.type';
 import { GET_USER_CONTENT, SYSTEM_CONTENT } from './constants';
-
-export type PromptResult = {
-    inputSequence: string,
-    outputSequence: string | undefined,
-    explanation: string | undefined,
-};
 
 export const createPromptSender = (aiClient: AiClient) => (text: string): Observable<PromptResult[]> => {
     const completionConfig = {

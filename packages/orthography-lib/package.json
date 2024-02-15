@@ -14,6 +14,7 @@
     "@types/diff": "^5.0.9",
     "@types/jasmine": "^5.1.4",
     "jasmine": "^5.1.0",
+    "orthography-interface": "file:../orthograhpy-interface",
     "typescript": "^5.3.3"
   },
   "dependencies": {

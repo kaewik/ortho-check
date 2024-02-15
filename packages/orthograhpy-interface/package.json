@@ -1,0 +1,12 @@
+{
+  "name": "orthograhpy-interface",
+  "version": "1.0.0",
+  "description": "",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

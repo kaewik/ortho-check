@@ -1,0 +1,97 @@
+{
+  "examples": [
+    {
+      "userText": "Eine Stein würd zum Fenster raus geworfen",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "4",
+          "outputSequence": "Ein",
+          "explanation": "Der unbestimmte Artikel 'Ein' bezieht sich auf das Substantiv 'Stein', welches von maskulin ist."
+        },
+        {
+          "startPos": "12",
+          "endPos": "15",
+          "outputSequence": "wird"
+        },
+        {
+          "startPos": "34",
+          "endPos": "41",
+          "outputSequence": "geworfen.",
+          "explanation": "Das Satzende benötigt einen '.'."
+        }
+      ]
+    },
+    {
+      "userText": "Der wolken ist schwarzes wird bald regnen.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "3",
+          "outputSequence": "Die",
+          "explanation": "Der bestimmte Artikel 'Die' bezieht sich auf das Substantiv 'Wolken', welches im Plural steht und feminin ist."
+        },
+        {
+          "startPos": "5",
+          "endPos": "10",
+          "outputSequence": "Wolken"
+        },
+        {
+          "startPos": "16",
+          "endPos": "22",
+          "outputSequence": "schwarz.",
+          "explanation": "Das Satzende benötigt einen '.'."
+        },
+        {
+          "startPos": "23",
+          "endPos": "24",
+          "outputSequence": "Es",
+          "explanation": "Am Satzanfang wird groß geschrieben."
+        }
+      ]
+    },
+    {
+      "userText": "Mein Hekke ist zu hoch",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "4",
+          "outputSequence": "Meine",
+          "explanation": "Das Possessivpronomen 'Meine' bezieht sich auf das Substantiv 'Hecke', welches feminin ist."
+        },
+        {
+          "startPos": "6",
+          "endPos": "10",
+          "outputSequence": "Hecke"
+        },
+        {
+          "startPos": "19",
+          "endPos": "22",
+          "outputSequence": "hoch.",
+          "explanation": "Das Satzende benötigt einen '.'."
+        }
+      ]
+    },
+    {
+      "userText": "Einkaufsliste:\n - ywei Tomaten\n - ein Packung Taschentücher\n-sieben Mandarinen",
+      "result": [
+        {
+          "startPos": "20",
+          "endPos": "23",
+          "outputSequence": "zwei"
+        },
+        {
+          "startPos": "37",
+          "endPos": "39",
+          "outputSequence": "eine",
+          "explanation": "Das Zahlwort 'eine' bezieht sich auf das Substantiv 'Packung', welches feminin ist."
+        },
+        {
+          "startPos": "64",
+          "endPos": "64",
+          "outputSequence": " - "
+        }
+      ]
+    }
+  ]
+}

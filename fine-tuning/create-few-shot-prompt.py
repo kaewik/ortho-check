@@ -16,33 +16,27 @@ from pathlib import Path
 if __name__ == "__main__":
     input_file = "./training_input.json"
     out_dir = 'out/'
-    output_file = out_dir + "training.jsonl"
+    output_file = out_dir + "few_shot_prompt.json"
 
     examples = []
     with open(input_file, 'r', encoding='utf-8') as f:
         training_input_data = json.load(f)
         examples = training_input_data["examples"]
 
-    training_objects = []
-    for example in examples:
-        training_obj = {
-            "messages": [{
-                "role": "system",
-                "content": system_prompt_content
-            }, {
-                "role": "user",
-                "content": example["userText"]
-            }, {
-                "role": "user",
-                "content": json.dumps(example["result"], ensure_ascii=False)
-            }]
-        }
-        training_objects.append(training_obj)
+    few_shots = [ f"Nutzertext: {example['userText']}\n{json.dumps(example['result'], ensure_ascii=False)}" for example in examples ]
+    few_shot_prompt = {
+        "messages": [{
+            "role": "system",
+            "content": system_prompt_content
+        }, {
+            "role": "user",
+            "content": "\n##\n".join(few_shots) + "\n##\nNutzertext: "
+        }]
+    }
+
 
     Path(out_dir).mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
-        for training_obj in training_objects:
-            json.dump(training_obj, f, ensure_ascii=False)
-            f.write("\n")
+        json.dump(few_shot_prompt, f, ensure_ascii=False)
 
-    print(f"System prompts added and updated. {output_file} saved successfully.")
+    print(f"System prompt added and updated. {output_file} saved successfully.")

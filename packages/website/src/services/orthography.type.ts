@@ -1,6 +1,6 @@
+import { PromptResult } from 'orthography-interface';
 import { Observable } from 'rxjs';
-import { CorrectionResult } from './correction-result.type';
 
 export type AbstractOrthographyService = {
-  check: (text: string) => Observable<CorrectionResult>
+  check: (text: string) => Observable<PromptResult[]>
 };

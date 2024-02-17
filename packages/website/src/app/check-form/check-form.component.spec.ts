@@ -31,9 +31,19 @@ describe('CheckFormComponent', () => {
 
   it('should display the corrected text in a paragraph', async () => {
     const fakeText = 'This iS sme fakee text.';
-    const fakeCorrectedText = 'This is some fake text.';
-    const fakeDiffs = diff.diffChars(fakeText, fakeCorrectedText);
-    const fakeCorrectionObservable = of({ diffs: fakeDiffs });
+    const fakeCorrectionObservable = of([{
+      startPos: 6,
+      endPos: 7,
+      outputSequence: 'is',
+    }, {
+      startPos: 9,
+      endPos: 11,
+      outputSequence: 'some',
+    }, {
+      startPos: 13,
+      endPos: 17,
+      outputSequence: 'fake',
+    }]);
     mockOrthographyService.check.and.returnValue(fakeCorrectionObservable);
 
     const form = fixture.nativeElement.querySelector('form');
@@ -48,9 +58,19 @@ describe('CheckFormComponent', () => {
 
   it('should display the corrected text in a paragraph even if it takes some time', async () => {
     const fakeText = 'This iS sme fakee text.';
-    const fakeCorrectedText = 'This is some fake text.';
-    const fakeDiffs = diff.diffChars(fakeText, fakeCorrectedText);
-    const fakeCorrectionObservable = of({ diffs: fakeDiffs }).pipe(delay(1_000));
+    const fakeCorrectionObservable = of([{
+      startPos: 6,
+      endPos: 7,
+      outputSequence: 'is',
+    }, {
+      startPos: 9,
+      endPos: 11,
+      outputSequence: 'some',
+    }, {
+      startPos: 13,
+      endPos: 17,
+      outputSequence: 'fake',
+    }]).pipe(delay(10_000));
     mockOrthographyService.check.and.returnValue(fakeCorrectionObservable);
 
     const form = fixture.nativeElement.querySelector('form');
@@ -61,5 +81,5 @@ describe('CheckFormComponent', () => {
     fixture.detectChanges();
     const actualCorrection = fixture.nativeElement.querySelector('p').innerText;
     expect(actualCorrection).toEqual('This iSs some fakee text.');
-  });
+  }, 15_000);
 });

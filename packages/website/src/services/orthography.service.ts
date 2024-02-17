@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { PromptResult, PromptResultsDTO } from 'orthography-interface';
+import { map, Observable } from 'rxjs';
 
 import { AbstractOrthographyService } from './orthography.type';
 import { CorrectionResult } from './correction-result.type';
@@ -13,7 +14,9 @@ import { ENV } from '../environments/environment.provider';
 export class OrthographyService implements AbstractOrthographyService {
   constructor(private http: HttpClient, @Inject(ENV) private environment: Environment) { }
 
-  check(text: string): Observable<CorrectionResult> {
-    return this.http.post<CorrectionResult>(this.environment.apiUrl, { text });
+  check(text: string): Observable<PromptResult[]> {
+    return this.http.post<PromptResultsDTO>(this.environment.apiUrl, { text }).pipe(
+      map((promptResultsDTO) => promptResultsDTO.results )
+    );
   }
 }

@@ -27,8 +27,13 @@ describe('OrthographyService', () => {
   });
 
   it('should make a POST request', () => {
-    const fakeText = 'Fake text.';
-    const fakeData = { diffs: [] };
+    const fakeText = 'Das ist ei Satz.';
+    const fakeData = [{
+      startPos: 9,
+      endPos: 10,
+      outputSequence: 'ein',
+      explanation: 'Dies ist eine Beschreibung des Problems.',
+    }];
     service.check(fakeText).subscribe(data => {
       expect(data).toEqual(fakeData);
     });
@@ -37,6 +42,6 @@ describe('OrthographyService', () => {
     expect(testRequest.request.method).toBe('POST');
     expect(testRequest.request.body).toEqual({ text: fakeText });
 
-    testRequest.flush(fakeData);
+    testRequest.flush({ results: fakeData });
   })
 });

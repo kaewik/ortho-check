@@ -7,7 +7,7 @@
           "startPos": "1",
           "endPos": "4",
           "outputSequence": "Ein",
-          "explanation": "Der unbestimmte Artikel 'Ein' bezieht sich auf das Substantiv 'Stein', welches von maskulin ist."
+          "explanation": "Der unbestimmte Artikel 'Ein' bezieht sich auf das Substantiv 'Stein', welches maskulin ist."
         },
         {
           "startPos": "12",
@@ -38,15 +38,9 @@
         },
         {
           "startPos": "16",
-          "endPos": "22",
-          "outputSequence": "schwarz.",
-          "explanation": "Das Satzende benötigt einen '.'."
-        },
-        {
-          "startPos": "23",
           "endPos": "24",
-          "outputSequence": "Es",
-          "explanation": "Am Satzanfang wird groß geschrieben."
+          "outputSequence": "schwarz. Es",
+          "explanation": "Das Satzende benötigt einen '.' und der Anfang des nächsten Satzes muss groß geschrieben werden."
         }
       ]
     },
@@ -76,20 +70,136 @@
       "userText": "Einkaufsliste:\n - ywei Tomaten\n - ein Packung Taschentücher\n-sieben Mandarinen",
       "result": [
         {
-          "startPos": "20",
-          "endPos": "23",
+          "startPos": "19",
+          "endPos": "22",
           "outputSequence": "zwei"
         },
         {
-          "startPos": "37",
-          "endPos": "39",
+          "startPos": "35",
+          "endPos": "37",
           "outputSequence": "eine",
           "explanation": "Das Zahlwort 'eine' bezieht sich auf das Substantiv 'Packung', welches feminin ist."
         },
         {
-          "startPos": "64",
-          "endPos": "64",
-          "outputSequence": " - "
+          "startPos": "61",
+          "endPos": "67",
+          "outputSequence": " - sieben"
+        }
+      ]
+    },
+    {
+      "userText": "Der Pfarrer hielt sein Predigt Danach segnete sie die Gemeindemitglieder.",
+      "result": [
+        {
+          "startPos": "24",
+          "endPos": "30",
+          "outputSequence": "Predigt.",
+          "explanation": "Am Ende eines Satzes muss ein '.' stehen."
+        },
+        {
+          "startPos": "47",
+          "endPos": "49",
+          "outputSequence": "er",
+          "explanation": "Das Personalpronomen 'er' bezieht sich auf 'Pfarrer' aus dem vorherigen Satz."
+        }
+      ]
+    },
+    {
+      "userText": "Er sagte \"Es tut mir leid!\"",
+      "result": [
+        {
+          "startPos": "4",
+          "endPos": "8",
+          "outputSequence": "sagte:",
+          "explanation": "Die direkte wörtliche Rede muss mit einem ':' eingeleitet werden."
+        },
+        {
+          "startPos": "22",
+          "endPos": "27",
+          "outputSequence": "leid!\".",
+          "explanation": "Am Ende eines Satzes muss ein '.' stehen."
+        }
+      ]
+    },
+    {
+      "userText": "xjd jasuhj xjaksd neask eansLustige Leute gehen auf die Straße.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "4",
+          "outputSequence": "",
+          "explanation": "Dieses Wort ist nicht bekannt."
+        },
+        {
+          "startPos": "5",
+          "endPos": "11",
+          "outputSequence": "",
+          "explanation": "Dieses Wort ist nicht bekannt."
+        },
+        {
+          "startPos": "12",
+          "endPos": "18",
+          "outputSequence": "",
+          "explanation": "Dieses Wort ist nicht bekannt."
+        },
+        {
+          "startPos": "19",
+          "endPos": "24",
+          "outputSequence": "",
+          "explanation": "Dieses Wort ist nicht bekannt."
+        },
+        {
+          "startPos": "25",
+          "endPos": "35",
+          "outputSequence": "Lustige"
+        }
+      ]
+    },
+    {
+      "userText": "Dieser Satz  ist in deutsch geschrieben.",
+      "result": [
+        {
+          "startPos": "12",
+          "endPos": "13",
+          "outputSequence": " "
+        }
+      ]
+    },
+    {
+      "userText": "Die große Johann liebt Brokkoli.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "3",
+          "outputSequence": "Der",
+          "explanation": "Der bestimmte Artikel 'Der' bezieht sich auf den Namen 'Johann', welcher maskulin ist."
+        }
+      ]
+    },
+    {
+      "userText": "Deine Aussage nach, verstehst du dich aufs kochen.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "5",
+          "outputSequence": "Deiner",
+          "explanation": "Das Possessivpronomen 'Deiner' steht hier im Akkusativ und bezieht sich auf das Substantiv 'Aussage', welches feminin ist."
+        },
+        {
+          "startPos": "39",
+          "endPos": "42",
+          "outputSequence": "auf's"
+        }
+      ]
+    },
+    {
+      "userText": "Grüner Papier wird zum Schreiben verwendet.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "6",
+          "outputSequence": "Grünes",
+          "explanation": "Das Adjektiv 'Grünes' bezieht sich auf das Substantiv 'Papier', welches sächlich ist."
         }
       ]
     }

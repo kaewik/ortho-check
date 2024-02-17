@@ -11,10 +11,12 @@ Es bestehen folgende Anforderungen:
 
 import json
 import os
+from pathlib import Path
 
 if __name__ == "__main__":
     input_file = "./training_input.json"
-    output_file = "training.jsonl"
+    out_dir = 'out/'
+    output_file = out_dir + "training.jsonl"
 
     examples = []
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -37,6 +39,7 @@ if __name__ == "__main__":
         }
         training_objects.append(training_obj)
 
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
         for training_obj in training_objects:
             json.dump(training_obj, f, ensure_ascii=False)

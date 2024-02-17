@@ -3,13 +3,24 @@ import { setupOrthographyChecker } from 'orthography-lib';
 
 const app = express();
 const port = 3000;
-const aiApiKey = process.env['AI_API_KEY'];
+const apiKey = process.env['AI_API_KEY'];
+const model = process.env['AI_MODEL'];
 
-if (!aiApiKey) {
+if (!apiKey) {
     throw new Error("Environmental variable AI_API_KEY not set! Cannot start the service.");
 }
 
-const checkOrthograhpy = setupOrthographyChecker(aiApiKey);
+if (!model) {
+    throw new Error("Environmental variable AI_MODEL not set! Cannot start the service.");
+}
+
+const checkOrthograhpy = setupOrthographyChecker({
+    apiKey,
+    modelConfig: {
+        model,
+        temperature: 0.0,
+    }
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

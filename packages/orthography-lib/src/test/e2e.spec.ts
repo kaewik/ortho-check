@@ -6,10 +6,19 @@ describe('E2E Tests', () => {
 
     beforeEach(() => {
         const apiKey = process.env['AI_API_KEY'];
+        const model = process.env['AI_MODEL'];
         if (!apiKey) {
             fail("Environmental variable AI_API_KEY not set!");
+        } else if (!model) {
+            fail("Environmental variable AI_MODEL not set!");
         } else {
-            checkOrthography = setupOrthographyChecker(apiKey);
+            checkOrthography = setupOrthographyChecker({
+                apiKey,
+                modelConfig: {
+                    model,
+                    temperature: 0.0,
+                },
+            });
         }
     });
 
@@ -18,8 +27,9 @@ describe('E2E Tests', () => {
 
         const result = await lastValueFrom(checkOrthography(textWithProblems));
 
-        expect(result[0].inputSequence).toMatch('Diese');
+        expect(result[0].startPos).toBe(1);
+        expect(result[0].endPos).toBe(5);
         expect(result[0].outputSequence).toMatch('Dieser');
         expect(result[0].explanation).toBeDefined();
-    }, 10_000);
+    }, 60_000);
 });

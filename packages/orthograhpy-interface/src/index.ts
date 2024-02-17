@@ -1,7 +1,8 @@
 export type PromptResult = {
-    inputSequence: string,
-    outputSequence: string | undefined,
-    explanation: string | undefined,
+    startPos: number,
+    endPos: number,
+    outputSequence: string,
+    explanation?: string,
 };
 
 export type PromptResultsDTO = {

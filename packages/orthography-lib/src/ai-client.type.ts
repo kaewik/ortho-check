@@ -3,12 +3,16 @@ export type AiMessage = {
     content: string,
 };
 
-export type CompletionConfig = {
-    model: string,
-    messages: AiMessage[],
-    temperature: number,
+export type AiConfig = {
+    apiKey: string,
+    modelConfig: AiModelConfig,
 };
 
+export type AiModelConfig = {
+    model: string,
+    temperature: number,
+}
+
 export type AiClient = {
-    createCompletion: (config: CompletionConfig) => Promise<string | null>
+    createCompletion: (messages: AiMessage[]) => Promise<string | null>
 };

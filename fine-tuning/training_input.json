@@ -202,6 +202,49 @@
           "explanation": "Das Adjektiv 'Grünes' bezieht sich auf das Substantiv 'Papier', welches sächlich ist."
         }
       ]
+    },
+    {
+      "userText": "Diese Satzt ist flash.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "5",
+          "outputSequence": "Dieser",
+          "explanation": "Das Adjektiv 'Dieser' bezieht sich auf das Substantiv 'Satz', welches maskulin ist."
+        },
+        {
+          "startPos": "7",
+          "endPos": "11",
+          "outputSequence": "Satz"
+        },
+        {
+          "startPos": "17",
+          "endPos": "22",
+          "outputSequence": "falsch."
+        }
+      ]
+    },
+    {
+      "userText": "Diese Buc hat seiten.",
+      "result": [
+        {
+          "startPos": "1",
+          "endPos": "5",
+          "outputSequence": "Dieses",
+          "explanation": "Das Adjektiv 'Dieses' bezieht sich auf das Substantiv 'Buch', welches neutral ist."
+        },
+        {
+          "startPos": "7",
+          "endPos": "9",
+          "outputSequence": "Buch"
+        },
+        {
+          "startPos": "15",
+          "endPos": "21",
+          "outputSequence": "Seiten."
+        }
+      ]
     }
+
   ]
 }

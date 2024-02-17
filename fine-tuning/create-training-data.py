@@ -6,7 +6,6 @@ Es bestehen folgende Anforderungen:
  - Jedes JSON Objekte kann ein Feld 'explanation' haben.
  - Das Feld 'startPos' gibt die Startposition des fehlerhaften Textteils im Nutzertext an.
  - Das Feld 'endPos' gibt die Endposition des fehlerhaften Textteils im Nutzertext an.
- - Das Feld 'outputSequence' gibt die Korrektur des Fehlers an und ist gleich "", wenn der Textteil gelöscht wurde.
  - Das Feld 'explanation' gibt eine Erklärung des Problems in ein bis zwei Sätzen an."""
 
 import json
@@ -33,7 +32,7 @@ if __name__ == "__main__":
                 "role": "user",
                 "content": example["userText"]
             }, {
-                "role": "user",
+                "role": "assistant",
                 "content": json.dumps(example["result"], ensure_ascii=False)
             }]
         }

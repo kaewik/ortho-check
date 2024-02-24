@@ -4,4 +4,4 @@
   </div>
   <button class="button" type="submit">Prüfen!</button>
 </form>
-<p *ngIf="correction.length > 0">{{ correction }}</p>
+<p *ngIf="correction.length > 0" [innerHTML]="correction"></p>

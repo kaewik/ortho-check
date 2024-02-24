@@ -1,5 +1,5 @@
 import { Environment } from './environment.type';
 
 export const environment: Environment = {
-  apiUrl: 'localhost:8080',
+  apiUrl: 'http://localhost:3000',
 }

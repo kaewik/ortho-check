@@ -5,7 +5,6 @@ import { diffChars } from 'diff';
 import { map } from 'rxjs';
 
 import { AbstractOrthographyService } from '../../services/orthography.type';
-import { CorrectionResult } from '../../services/correction-result.type';
 import { OrthographyServiceToken } from '../app.config';
 
 @Component({
@@ -32,6 +31,7 @@ export class CheckFormComponent {
     const formText = formData.text;
     if (formText) {
       this.orthographyService.check(formText).subscribe((promptResults) => {
+        console.dir(promptResults);
         const correctText = Array.from(formText).flatMap((character, index) => {
           const [matchingResult] = promptResults.filter(result => result.startPos === index + 1);
           if (promptResults.some(result => result.startPos < index + 1 && index + 1 <= result.endPos)) {
@@ -42,7 +42,15 @@ export class CheckFormComponent {
         console.log(correctText);
         console.log(formText);
         const diffs = diffChars(formText, correctText);
-        this.correction = diffs.map(char => char.value).join('');
+        this.correction = diffs.map(char => {
+          if (char.added) {
+            return '<font color="green">' + char.value + '</font>';
+          } else if (char.removed) {
+            return '<font color="red">' + char.value + '</font>';
+          } else {
+            return '<font color="grey">' + char.value + '</font>';
+          }
+        }).join('');
       });
     }
   }

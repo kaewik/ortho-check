@@ -52,8 +52,8 @@ describe('CheckFormComponent', () => {
 
     await fixture.whenStable();
     fixture.detectChanges();
-    const actualCorrection = fixture.nativeElement.querySelector('p').innerText;
-    expect(actualCorrection).toEqual('This iSs some fakee text.');
+    const actualCorrection = fixture.nativeElement.querySelector('p').innerHTML;
+    expect(actualCorrection).toEqual('<font color="grey">This i</font><font color="red">S</font><font color="green">s</font><font color="grey"> s</font><font color="green">o</font><font color="grey">me fake</font><font color="red">e</font><font color="grey"> text.</font>');
   });
 
   it('should display the corrected text in a paragraph even if it takes some time', async () => {
@@ -79,7 +79,7 @@ describe('CheckFormComponent', () => {
 
     await fixture.whenStable();
     fixture.detectChanges();
-    const actualCorrection = fixture.nativeElement.querySelector('p').innerText;
-    expect(actualCorrection).toEqual('This iSs some fakee text.');
+    const actualCorrection = fixture.nativeElement.querySelector('p').innerHTML;
+    expect(actualCorrection).toEqual('<font color="grey">This i</font><font color="red">S</font><font color="green">s</font><font color="grey"> s</font><font color="green">o</font><font color="grey">me fake</font><font color="red">e</font><font color="grey"> text.</font>');
   }, 15_000);
 });

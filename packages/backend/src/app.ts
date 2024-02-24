@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express, { Request, Response } from 'express';
 import { setupOrthographyChecker } from 'orthography-lib';
 
@@ -22,6 +23,7 @@ const checkOrthograhpy = setupOrthographyChecker({
     }
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.post('/check', (req: Request, res: Response) => {

@@ -1,4 +1,5 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpHeaders } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { ENV } from '../environments/environment.provider';
@@ -38,9 +39,10 @@ describe('OrthographyService', () => {
       expect(data).toEqual(fakeData);
     });
 
-    const testRequest = httpTestingController.expectOne(fakeUrl);
+    const testRequest = httpTestingController.expectOne(fakeUrl + '/check');
     expect(testRequest.request.method).toBe('POST');
     expect(testRequest.request.body).toEqual({ text: fakeText });
+    expect(testRequest.request.headers.get('Content-Type')).toBe('application/json');
 
     testRequest.flush({ results: fakeData });
   })

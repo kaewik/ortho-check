@@ -4,12 +4,11 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
   "devDependencies": {
     "lerna": "^8.1.2"
   },
   "volta": {
     "node": "20.11.1",
-    "npm": "10.4.0"
+    "yarn": "4.1.0"
   }
 }

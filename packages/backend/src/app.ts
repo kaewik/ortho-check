@@ -15,7 +15,7 @@ if (!model) {
     throw new Error("Environmental variable AI_MODEL not set! Cannot start the service.");
 }
 
-const checkOrthograhpy = setupOrthographyChecker({
+const checkOrthography = setupOrthographyChecker({
     apiKey,
     modelConfig: {
         model,
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.post('/check', (req: Request, res: Response) => {
     const text = req.body.text;
-    checkOrthograhpy(text).subscribe((results) => res.json({ results }));
+    checkOrthography(text).subscribe((results) => res.json({ results }));
 });
 
 app.listen(port, () => {

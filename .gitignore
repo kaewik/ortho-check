@@ -29,3 +29,9 @@ pids
 *.sw?
 
 .nx/cache
+
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*

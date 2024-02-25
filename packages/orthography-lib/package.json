@@ -22,5 +22,11 @@
     "diff": "^5.2.0",
     "openai": "^4.28.0",
     "rxjs": "^7.8.1"
+  },
+  "nx": {
+    "implicitDependencies": ["orthograhpy-interface"]
+  },
+  "volta": {
+    "extends": "../../package.json"
   }
 }

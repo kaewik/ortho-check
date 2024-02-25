@@ -38,5 +38,11 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "orthography-interface": "file:../orthograhpy-interface",
     "typescript": "~5.3.2"
+  },
+  "nx": {
+    "implicitDependencies": ["orthograhpy-interface"]
+  },
+  "volta": {
+    "extends": "../../package.json"
   }
 }

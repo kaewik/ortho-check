@@ -8609,7 +8609,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nx@npm:18.0.5, nx@npm:>=17.1.2 < 19":
+"nx@npm:18.0.5, nx@npm:>=17.1.2 < 19, nx@npm:^18.0.5":
   version: 18.0.5
   resolution: "nx@npm:18.0.5"
   dependencies:
@@ -9956,6 +9956,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     lerna: "npm:^8.1.2"
+    nx: "npm:^18.0.5"
   languageName: unknown
   linkType: soft
 

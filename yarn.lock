@@ -3779,7 +3779,7 @@ __metadata:
     "@types/node": "npm:^20.11.17"
     cors: "npm:^2.8.5"
     express: "npm:^4.18.2"
-    orthography-lib: "file:../orthography-lib"
+    orthography-lib: "workspace:*"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
@@ -8828,18 +8828,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"orthography-lib@file:../orthography-lib::locator=backend%40workspace%3Apackages%2Fbackend":
-  version: 1.0.0
-  resolution: "orthography-lib@file:../orthography-lib#../orthography-lib::hash=9945c5&locator=backend%40workspace%3Apackages%2Fbackend"
-  dependencies:
-    diff: "npm:^5.2.0"
-    openai: "npm:^4.28.0"
-    rxjs: "npm:^7.8.1"
-  checksum: 10c0/f0d8e41b4445b7f4ba962ea824d4aba55c4625e897bb6a6f78066770819f80ae7457519ed2f1e9ac9ce4339deaeff73027906c6e9a89f38aa0cde185528c6483
-  languageName: node
-  linkType: hard
-
-"orthography-lib@workspace:packages/orthography-lib":
+"orthography-lib@workspace:*, orthography-lib@workspace:packages/orthography-lib":
   version: 0.0.0-use.local
   resolution: "orthography-lib@workspace:packages/orthography-lib"
   dependencies:

@@ -2,7 +2,9 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "graph": "nx graph"
+    "graph": "nx graph",
+    "build": "lerna run build",
+    "start": "lerna run start"
   },
   "workspaces": [
     "packages/*"

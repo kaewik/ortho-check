@@ -3770,9 +3770,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"backend@workspace:packages/backend":
+"backend_legacy@workspace:packages/backend_legacy":
   version: 0.0.0-use.local
-  resolution: "backend@workspace:packages/backend"
+  resolution: "backend_legacy@workspace:packages/backend_legacy"
   dependencies:
     "@types/cors": "npm:^2.8.17"
     "@types/express": "npm:^4.17.21"

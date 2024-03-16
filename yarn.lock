@@ -11729,7 +11729,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.0":
+"prettier@npm:^3.0.0, prettier@npm:^3.2.5":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
   bin:
@@ -12373,6 +12373,7 @@ __metadata:
   dependencies:
     lerna: "npm:^8.1.2"
     nx: "npm:^18.0.5"
+    prettier: "npm:^3.2.5"
   languageName: unknown
   linkType: soft
 

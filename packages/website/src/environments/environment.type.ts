@@ -1,3 +1,3 @@
 export type Environment = {
-  apiUrl: string
-}
+  apiUrl: string;
+};

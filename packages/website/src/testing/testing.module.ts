@@ -6,12 +6,10 @@ import { AbstractOrthographyService } from '../services/orthography.type';
 import { OrthographyServiceToken } from '../app/app.config';
 
 @NgModule({
-  imports: [
-    CommonModule,
+  imports: [CommonModule],
+  exports: [CommonModule],
+  providers: [
+    { provide: OrthographyServiceToken, useValue: orthographyServiceMock },
   ],
-  exports: [
-    CommonModule,
-  ],
-  providers: [{ provide: OrthographyServiceToken, useValue: orthographyServiceMock }],
 })
 export class TestingModule {}

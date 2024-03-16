@@ -4,14 +4,16 @@
   "scripts": {
     "graph": "nx graph",
     "build": "lerna run build",
-    "start": "lerna run start"
+    "start": "lerna run start",
+    "format": "prettier --write \"**/*.{ts,tsx,json,css,scss,md}\""
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "lerna": "^8.1.2",
-    "nx": "^18.0.5"
+    "nx": "^18.0.5",
+    "prettier": "^3.2.5"
   },
   "volta": {
     "node": "20.11.1",

@@ -1,18 +1,18 @@
 export type AiMessage = {
-    role: string,
-    content: string,
+  role: string;
+  content: string;
 };
 
 export type AiConfig = {
-    apiKey: string,
-    modelConfig: AiModelConfig,
+  apiKey: string;
+  modelConfig: AiModelConfig;
 };
 
 export type AiModelConfig = {
-    model: string,
-    temperature: number,
-}
+  model: string;
+  temperature: number;
+};
 
 export type AiClient = {
-    createCompletion: (messages: AiMessage[]) => Promise<string | null>
+  createCompletion: (messages: AiMessage[]) => Promise<string | null>;
 };

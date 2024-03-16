@@ -1,5 +1,4 @@
-export const SYSTEM_CONTENT =
-`Du bist ein Experte in deutscher Rechtschreibung und Grammatik.
+export const SYSTEM_CONTENT = `Du bist ein Experte in deutscher Rechtschreibung und Grammatik.
 Prüfe den Nutzertext auf Grammatik und Rechtschreibung.
 Es bestehen folgende Anforderungen:
  - Die Antwort muss eine Liste von JSON Objekten sein.
@@ -9,8 +8,8 @@ Es bestehen folgende Anforderungen:
  - Das Feld 'endPos' gibt die Endposition des fehlerhaften Textteils im Nutzertext an.
  - Das Feld 'explanation' gibt eine Erklärung des Problems in ein bis zwei Sätzen an.`;
 
- export const GET_USER_CONTENT_FEW_SHOT = (text: string) =>
-`Nutzertext: Eine Stein würd zum Fenster raus geworfen
+export const GET_USER_CONTENT_FEW_SHOT = (text: string) =>
+  `Nutzertext: Eine Stein würd zum Fenster raus geworfen
 [{"startPos": "1", "endPos": "4", "outputSequence": "Ein", "explanation": "Der unbestimmte Artikel 'Ein' bezieht sich auf das Sub
 stantiv 'Stein', welches maskulin ist."}, {"startPos": "12", "endPos": "15", "outputSequence": "wird"}, {"startPos": "34", "endPo
 s": "41", "outputSequence": "geworfen.", "explanation": "Das Satzende benötigt einen '.'."}]

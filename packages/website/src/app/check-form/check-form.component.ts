@@ -10,20 +10,21 @@ import { OrthographyServiceToken } from '../app.config';
 @Component({
   selector: 'app-check-form',
   standalone: true,
-  imports: [ CommonModule, ReactiveFormsModule ],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './check-form.component.html',
-  styleUrl: './check-form.component.css'
+  styleUrl: './check-form.component.css',
 })
 export class CheckFormComponent {
   public form = this.formBuilder.group({
-    text: ''
+    text: '',
   });
 
   public correction = '';
 
   public constructor(
     private formBuilder: FormBuilder,
-    @Inject(OrthographyServiceToken) private orthographyService: AbstractOrthographyService,
+    @Inject(OrthographyServiceToken)
+    private orthographyService: AbstractOrthographyService,
   ) {}
 
   public checkOrthography(): void {
@@ -32,25 +33,36 @@ export class CheckFormComponent {
     if (formText) {
       this.orthographyService.check(formText).subscribe((promptResults) => {
         console.dir(promptResults);
-        const correctText = Array.from(formText).flatMap((character, index) => {
-          const [matchingResult] = promptResults.filter(result => result.startPos === index + 1);
-          if (promptResults.some(result => result.startPos < index + 1 && index + 1 <= result.endPos)) {
-            return '';
-          }
-          return matchingResult ? matchingResult.outputSequence : character;
-        }).join('');
+        const correctText = Array.from(formText)
+          .flatMap((character, index) => {
+            const [matchingResult] = promptResults.filter(
+              (result) => result.startPos === index + 1,
+            );
+            if (
+              promptResults.some(
+                (result) =>
+                  result.startPos < index + 1 && index + 1 <= result.endPos,
+              )
+            ) {
+              return '';
+            }
+            return matchingResult ? matchingResult.outputSequence : character;
+          })
+          .join('');
         console.log(correctText);
         console.log(formText);
         const diffs = diffChars(formText, correctText);
-        this.correction = diffs.map(char => {
-          if (char.added) {
-            return '<font color="green">' + char.value + '</font>';
-          } else if (char.removed) {
-            return '<font color="red">' + char.value + '</font>';
-          } else {
-            return '<font color="grey">' + char.value + '</font>';
-          }
-        }).join('');
+        this.correction = diffs
+          .map((char) => {
+            if (char.added) {
+              return '<font color="green">' + char.value + '</font>';
+            } else if (char.removed) {
+              return '<font color="red">' + char.value + '</font>';
+            } else {
+              return '<font color="grey">' + char.value + '</font>';
+            }
+          })
+          .join('');
       });
     }
   }

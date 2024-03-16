@@ -1,4 +1,8 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { PromptResult, PromptResultsDTO } from 'orthography-interface';
 import { catchError, map, Observable, throwError } from 'rxjs';
@@ -8,20 +12,26 @@ import { Environment } from '../environments/environment.type';
 import { ENV } from '../environments/environment.provider';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrthographyService implements AbstractOrthographyService {
-  constructor(private http: HttpClient, @Inject(ENV) private environment: Environment) { }
+  constructor(
+    private http: HttpClient,
+    @Inject(ENV) private environment: Environment,
+  ) {}
 
   public check(text: string): Observable<PromptResult[]> {
-    return this.http.post<PromptResultsDTO>(
-      this.environment.apiUrl + '/check',
-      { text },
-      {
-        headers: new HttpHeaders({ 'Content-Type':  'application/json' })
-      }).pipe(
+    return this.http
+      .post<PromptResultsDTO>(
+        this.environment.apiUrl + '/check',
+        { text },
+        {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        },
+      )
+      .pipe(
         catchError(this.handleError),
-        map((promptResultsDTO) => promptResultsDTO.results)
+        map((promptResultsDTO) => promptResultsDTO.results),
       );
   }
 
@@ -33,9 +43,13 @@ export class OrthographyService implements AbstractOrthographyService {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
+        `Backend returned code ${error.status}, body was: `,
+        error.error,
+      );
     }
     // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+    return throwError(
+      () => new Error('Something bad happened; please try again later.'),
+    );
   }
 }

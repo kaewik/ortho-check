@@ -2,7 +2,6 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { HttpHeaders } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { ENV } from '../environments/environment.provider';

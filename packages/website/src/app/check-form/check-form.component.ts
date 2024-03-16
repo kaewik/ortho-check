@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { diffChars } from 'diff';
-import { map } from 'rxjs';
 
 import { AbstractOrthographyService } from '../../services/orthography.type';
 import { OrthographyServiceToken } from '../app.config';

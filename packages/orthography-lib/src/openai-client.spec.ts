@@ -1,5 +1,3 @@
-import OpenAI from 'openai';
-
 import { OpenAiAdapter } from './openai-adapter';
 import { OpenAiClient } from './openai-client';
 
@@ -24,7 +22,7 @@ describe('OpenAiClient', () => {
 
   beforeEach(() => {
     mockOpenAiAdapter = jasmine.createSpyObj<OpenAiAdapter>(['complete']);
-    const mockOpenAiAdapterFactory = (apiKey: string) => mockOpenAiAdapter;
+    const mockOpenAiAdapterFactory = () => mockOpenAiAdapter;
     openAiClient = new OpenAiClient(fakeAiConfig, mockOpenAiAdapterFactory);
   });
 

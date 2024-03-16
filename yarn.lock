@@ -4897,6 +4897,7 @@ __metadata:
     "@types/node": "npm:^20.3.1"
     "@types/supertest": "npm:^6.0.0"
     jest: "npm:^29.5.0"
+    orthography-lib: "workspace:^"
     reflect-metadata: "npm:^0.2.0"
     rxjs: "npm:^7.8.1"
     source-map-support: "npm:^0.5.21"
@@ -11129,7 +11130,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"orthography-lib@workspace:packages/orthography-lib":
+"orthography-lib@workspace:^, orthography-lib@workspace:packages/orthography-lib":
   version: 0.0.0-use.local
   resolution: "orthography-lib@workspace:packages/orthography-lib"
   dependencies:

@@ -9,7 +9,7 @@ $ yarn run build
 
 ## Run
 
-You need an open ai api token for this.
+You need an open AI API token for this.
 
 ```
 $ AI_API_KEY=<your token> AI_MODEL=gpt-3.5-turbo yarn run start

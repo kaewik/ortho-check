@@ -5,8 +5,9 @@
     "graph": "nx graph",
     "build": "lerna run build",
     "start": "lerna run start",
-    "format": "prettier --write \"**/*.{ts,tsx,json,css,scss,md}\"",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,json,css,scss,md}\"",
+    "lint": "eslint --ignore-path .gitignore . --ext .js,.jsx,.ts,.tsx --fix",
+    "test": "lerna run test"
   },
   "workspaces": [
     "packages/*"

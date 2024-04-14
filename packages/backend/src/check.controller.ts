@@ -1,5 +1,4 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import { CheckOrthographyResult } from './orthographyLib.types';
 import { CheckService } from './check.service';
 

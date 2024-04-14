@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jasmine"
+    "test": "jasmine",
+    "test:e2e": "jasmine --config=./spec/support/jasmine-e2e.json"
   },
   "keywords": [],
   "author": "",

@@ -6,13 +6,15 @@ import { CheckController } from './check.controller';
 import { CheckService } from './check.service';
 
 @Module({
-  imports: [ConfigModule.forRoot({
-    cache: true,
-    validationSchema: Joi.object({
+  imports: [
+    ConfigModule.forRoot({
+      cache: true,
+      validationSchema: Joi.object({
         AI_API_KEY: Joi.string().required(),
         AI_MODEL: Joi.string().default('gpt-3.5-turbo'),
       }),
-  })],
+    }),
+  ],
   controllers: [CheckController],
   providers: [
     CheckService,

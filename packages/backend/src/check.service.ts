@@ -1,5 +1,4 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import {
   CheckOrthographyResult,
   CheckOrthographySignature,

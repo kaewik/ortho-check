@@ -50,6 +50,6 @@ describe('OrthographyService', () => {
       'application/json',
     );
 
-    testRequest.flush({ results: fakeData });
+    testRequest.flush(fakeData);
   });
 });

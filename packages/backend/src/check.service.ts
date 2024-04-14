@@ -1,11 +1,18 @@
-import { Injectable } from '@nestjs/common';
-import { CheckOrthographySignature } from './orthographyLib.types';
+import { Inject, Injectable } from '@nestjs/common';
+import { Observable } from 'rxjs';
+import {
+  CheckOrthographyResult,
+  CheckOrthographySignature,
+} from './orthographyLib.types';
 
 @Injectable()
 export class CheckService {
-  constructor(private checkOrthography: CheckOrthographySignature) {}
+  constructor(
+    @Inject('OrthographyChecker')
+    private checkOrthography: CheckOrthographySignature,
+  ) {}
 
-  getHello(): string {
-    return 'Hello World!';
+  checkText(text: string): CheckOrthographyResult {
+    return this.checkOrthography(text);
   }
 }

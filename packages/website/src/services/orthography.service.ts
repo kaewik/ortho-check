@@ -4,7 +4,7 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { PromptResult, PromptResultsDTO } from 'orthography-interface';
+import { PromptResult } from 'orthography-interface';
 import { catchError, map, Observable, throwError } from 'rxjs';
 
 import { AbstractOrthographyService } from './orthography.type';
@@ -22,7 +22,7 @@ export class OrthographyService implements AbstractOrthographyService {
 
   public check(text: string): Observable<PromptResult[]> {
     return this.http
-      .post<PromptResultsDTO>(
+      .post<PromptResult[]>(
         this.environment.apiUrl + '/check',
         { text },
         {
@@ -31,7 +31,7 @@ export class OrthographyService implements AbstractOrthographyService {
       )
       .pipe(
         catchError(this.handleError),
-        map((promptResultsDTO) => promptResultsDTO.results),
+        map((promptResults) => promptResults),
       );
   }
 
